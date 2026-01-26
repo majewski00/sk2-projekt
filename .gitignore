@@ -1,0 +1,17 @@
+# Compiled binaries
+reversi/client_bin
+reversi/server_bin
+
+# Object files
+*.o
+
+# Test executables
+reversi/tests/unit/test_coord_check
+reversi/tests/unit/test_game_logic
+reversi/tests/unit/test_specific_move
+
+# Test reports
+reversi/tests/reports/*.log
+
+# macOS
+.DS_Store
