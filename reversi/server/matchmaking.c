@@ -47,7 +47,13 @@ static int get_waiting_player(void) {
 
 static void handle_paired_game(int black_player_socket, int white_player_socket) {
     GameState game;
-    initialize_game(&game);
+    
+    char *test_mode = getenv("REVERSI_TEST_MODE");
+    if (test_mode != NULL && strcmp(test_mode, "1") == 0) {
+        initialize_test_game(&game);
+    } else {
+        initialize_game(&game);
+    }
     
     send_board_message(black_player_socket, &game);
     send_board_message(white_player_socket, &game);

@@ -8,7 +8,7 @@ cd "$(dirname "$0")/../.." || exit 1
 
 set -e
 
-PORT=8890
+PORT=8080
 TEST_LOG="tests/reports/manual_tests_results.log"
 SERVER_PID=""
 

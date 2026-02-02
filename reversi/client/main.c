@@ -209,6 +209,7 @@ int main(int argc, char *argv[]) {
             waiting_for_turn = 1;
         } else if (handle_result == -1) {
             game_active = 0;
+            break;
         }
     }
     

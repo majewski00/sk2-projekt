@@ -25,6 +25,7 @@ typedef struct {
 } GameState;
 
 void initialize_game(GameState *game);
+void initialize_test_game(GameState *game);
 bool is_valid_move(const GameState *game, int row, int col);
 bool execute_move(GameState *game, int row, int col);
 bool has_legal_moves(const GameState *game, Player player);

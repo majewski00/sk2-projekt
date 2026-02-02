@@ -81,6 +81,30 @@ void initialize_game(GameState *game) {
     game->white_can_move = true;
 }
 
+void initialize_test_game(GameState *game) {
+    for (int row = 0; row < BOARD_HEIGHT; row++) {
+        for (int col = 0; col < BOARD_WIDTH; col++) {
+            game->board[row][col] = CELL_BLACK;
+        }
+    }
+    
+    game->board[0][7] = CELL_EMPTY;
+    game->board[1][7] = CELL_WHITE;
+    game->board[2][7] = CELL_WHITE;
+    game->board[3][7] = CELL_WHITE;
+    game->board[4][7] = CELL_WHITE;
+    game->board[5][7] = CELL_WHITE;
+    game->board[6][7] = CELL_WHITE;
+    game->board[7][7] = CELL_WHITE;
+    game->board[7][6] = CELL_WHITE;
+    game->board[7][5] = CELL_WHITE;
+    
+    game->current_player = PLAYER_BLACK;
+    game->status = GAME_STATUS_IN_PROGRESS;
+    game->black_can_move = true;
+    game->white_can_move = true;
+}
+
 bool is_valid_move(const GameState *game, int row, int col) {
     if (!is_within_bounds(row, col)) {
         return false;
